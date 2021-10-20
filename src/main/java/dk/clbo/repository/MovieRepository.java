@@ -25,12 +25,12 @@ public class MovieRepository {
 
             while(rs.next()) {
                 Movie movie = new Movie(
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getString(6)
+                        rs.getString("year"),
+                        rs.getString("length"),
+                        rs.getString("title"),
+                        rs.getString("subject"),
+                        rs.getString("popularity"),
+                        rs.getString("awards")
                 );
                 movies.add(movie);
             }
