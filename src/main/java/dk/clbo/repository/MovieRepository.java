@@ -20,6 +20,7 @@ public class MovieRepository {
         try {
             stmt = conn.prepareStatement("SELECT * FROM movies");
             ResultSet rs = stmt.executeQuery();
+
             while(rs.next()) {
                 Movie movie = new Movie(
                         rs.getString(1),
