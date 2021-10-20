@@ -7,7 +7,11 @@ import java.util.List;
 
 public class MovieService {
 
-    MovieRepository repository = new MovieRepository();
+    MovieRepository repository;
+
+    public MovieService() {
+        repository = new MovieRepository();
+    }
 
     public List<Movie> getAllMovies(){
         return repository.getAllMovies();

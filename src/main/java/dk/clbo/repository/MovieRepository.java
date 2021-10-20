@@ -12,10 +12,12 @@ import java.util.List;
 
 public class MovieRepository {
 
-    List<Movie> movies = new ArrayList<>();
+    List<Movie> movies;
     Connection conn = DBManager.getConnection();
 
     public List<Movie> getAllMovies(){
+        movies = new ArrayList<>();
+
         PreparedStatement stmt = null;
         try {
             stmt = conn.prepareStatement("SELECT * FROM movies");
