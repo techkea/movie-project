@@ -1,6 +1,6 @@
 ### Custom ###
 ### ignore mysql params on github
-src/main/resources/application.properties
+## src/main/resources/application.properties
 
 HELP.md
 target/
