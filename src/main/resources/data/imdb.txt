@@ -1,7 +1,3 @@
-create schema IF NOT EXISTS imdb;
-use imdb;
-drop table IF EXISTS movies;
-
 create table movies (
                         ID int auto_increment primary key,
                         title varchar(100) ,
@@ -11,11 +7,3 @@ create table movies (
                         popularity varchar(100) ,
                         awards varchar(3)
 );
-
-LOAD DATA LOCAL INFILE "imdb-data.csv"
-INTO TABLE movies
-    FIELDS TERMINATED BY ';' 
-           OPTIONALLY ENCLOSED BY '"'
-    LINES TERMINATED BY '\r\n'
-    IGNORE 1 LINES
-(year, length, title, subject, popularity, awards);
