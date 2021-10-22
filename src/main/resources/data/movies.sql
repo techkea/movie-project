@@ -11,3 +11,11 @@ create table movies (
                         popularity varchar(100) ,
                         awards varchar(3)
 )
+
+LOAD DATA LOCAL INFILE "imdb-data.csv"
+INTO TABLE movies
+    FIELDS TERMINATED BY ';' 
+           OPTIONALLY ENCLOSED BY '"'
+    LINES TERMINATED BY '\r\n'
+    IGNORE 1 LINES
+(year, length, title, subject, popularity, awards);
