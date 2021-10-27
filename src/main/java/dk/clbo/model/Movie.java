@@ -5,6 +5,7 @@ public class Movie {
     private String year;
     private String Length;
     private String title;
+    private String titlexxxxx;
     private String subject;
     private String popularity;
     private String awards;
@@ -19,6 +20,14 @@ public class Movie {
         this.subject = subject;
         this.popularity = popularity;
         this.awards = awards;
+    }
+
+    public String getTitlexxxxx() {
+        return titlexxxxx;
+    }
+
+    public void setTitlexxxxx(String titlexxxxx) {
+        this.titlexxxxx = titlexxxxx;
     }
 
     public String getYear() {
