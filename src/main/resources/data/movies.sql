@@ -1,5 +1,4 @@
-create schema IF NOT EXISTS imdb;
-use imdb;
+
 drop table IF EXISTS movies;
 
 create table movies (
