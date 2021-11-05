@@ -4,6 +4,7 @@ import dk.clbo.model.Dummy;
 import dk.clbo.model.Movie;
 import dk.clbo.repository.MovieRepository;
 import dk.clbo.services.MovieService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MovieController {
-
+    
     private MovieRepository repo;
 
     public MovieController(){
