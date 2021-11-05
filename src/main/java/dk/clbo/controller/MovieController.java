@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MovieController {
-    
+
     private MovieRepository repo;
 
     public MovieController(){
