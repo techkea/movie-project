@@ -17,9 +17,16 @@ public class DBManager {
 
     // metoder
     public static Connection getConnection(){
-       // if (connection != null) {
-        //    return connection;
-        //}
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (connection != null) {
+           return connection;
+        }
         try (InputStream input = new FileInputStream("src/main/resources/application.properties")) {
             Properties properties = new Properties();
             properties.load(input);
@@ -30,11 +37,10 @@ public class DBManager {
             ex.printStackTrace();
         }
         try {
-            return DriverManager.getConnection(url,user, password);
+            connection = DriverManager.getConnection(url,user, password);
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
-        //return connection;
+        return connection;
     }
 }
