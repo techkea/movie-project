@@ -18,12 +18,6 @@ public class DBManager {
     // metoder
     public static Connection getConnection(){
 
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-
         if (connection != null) {
            return connection;
         }
