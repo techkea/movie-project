@@ -21,15 +21,10 @@ public class DBManager {
         if (connection != null) {
            return connection;
         }
-        try (InputStream input = new FileInputStream("src/main/resources/application.properties")) {
-            Properties properties = new Properties();
-            properties.load(input);
-            url = properties.getProperty("url");
-            user = properties.getProperty("user");
-            password = properties.getProperty("password");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
+            url = System.getenv("url");
+            user = System.getenv("mp_user");
+            password = System.getenv("mp_password");
+
         try {
             connection = DriverManager.getConnection(url,user, password);
         } catch (SQLException e) {
